@@ -25,30 +25,9 @@ public abstract class SpawnInRectangularGrid<T> : MonoBehaviour where T : MonoBe
         _cellSpacingValues.Value[1] = _cellSpacing.y;
     }
 
-    public virtual void SetGridSize(Vector2Int vector)
-    {
-        SetGridSize(vector.x, vector.y);
-    }
-
     public virtual T GetGridElement(int x, int y)
     {
         return _gridElements[x, y];
-    }
-
-    public virtual T GetGridElement(Vector2Int vector)
-    {
-        return GetGridElement(vector.x, vector.y);
-    }
-
-    public virtual void DeleteCurrentGrid()
-    {
-        for (int i = 0; i < _gridElements.GetLength(0); i++)
-        {
-            for (int j = 0; j < _gridElements.GetLength(1); j++)
-            {
-                Destroy(_gridElements[i,j]?.gameObject);
-            }
-        }
     }
 
     public virtual T GetRandomGridElement()
@@ -57,17 +36,5 @@ public abstract class SpawnInRectangularGrid<T> : MonoBehaviour where T : MonoBe
         int randomY = Random.Range(0, _tileCount.y-1);
 
         return GetGridElement(randomX, randomY);
-    }
-
-    /// <summary>
-    /// Finds the edge-most cells
-    /// </summary>
-    /// <returns>returns a vector4 with x,X,y,Y, the minimum and maximum of each respective vector component </returns>
-    public Vector4 GetTileEdges()
-    {
-        Vector2 minima = _gridElements[0, 0].transform.position;
-        Vector2 extrema = _gridElements[_tileCount.x-1, _tileCount.y-1].transform.position;
-
-        return new Vector4(minima.x, extrema.x, minima.y, extrema.y);
     }
 }

@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 7003815711025754807}
   - component: {fileID: 7003815711025754806}
   - component: {fileID: 2338145783105936943}
-  - component: {fileID: 6188416484890557594}
-  m_Layer: 0
+  - component: {fileID: 6857966946555078226}
+  m_Layer: 6
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.1509434, g: 0.1245995, b: 0.1245995, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -110,7 +110,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &6188416484890557594
+--- !u!114 &6857966946555078226
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,7 +119,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 7003815711025754805}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b51bbc4954b4f9bb58f84eca520469e, type: 3}
+  m_Script: {fileID: 11500000, guid: 440e11c318e24ed408f7cf8ab4051e3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Type: 1
+  _collider2D: {fileID: 2338145783105936943}

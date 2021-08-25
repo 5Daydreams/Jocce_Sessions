@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0f5da41882689c44a56224a0a50f92c, type: 3}
   m_Name: EnemyThreshold
   m_EditorClassIdentifier: 
-  Value: 0.98
+  Value: 0.7

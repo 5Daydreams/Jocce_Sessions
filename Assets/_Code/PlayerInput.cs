@@ -7,21 +7,19 @@ using UnityEngine;
 namespace _Code
 {
     [RequireComponent(typeof(MovePointController))]
-    public class Player : SingletonMono<Player>
+    public class PlayerInput : SingletonMono<PlayerInput>
     {
         [SerializeField] private MovePointController _movePointController;
         private Vector2 _movementDirection;
 
         private void Update()
         {
-            _movePointController.LerpTowardsMovePoint();
-
             bool inputReceived = CheckForInput();
 
             if (!inputReceived || !_movePointController.WithinReach)
                 return;
 
-            if (_movePointController.CheckIfMovementPossible(_movementDirection))
+            if (_movePointController.CheckForFreeSpace(_movementDirection, 0.5f))
             {
                 MovePlayer();
             }

@@ -140,11 +140,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4384507957796317590, guid: 9c175ad8cba7958418b4088c304cae92, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.94
+      value: -14.08
       objectReference: {fileID: 0}
     - target: {fileID: 4384507957796317590, guid: 9c175ad8cba7958418b4088c304cae92, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.17
+      value: 2.94
       objectReference: {fileID: 0}
     - target: {fileID: 4384507957796317590, guid: 9c175ad8cba7958418b4088c304cae92, type: 3}
       propertyPath: m_LocalPosition.z
@@ -206,7 +206,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 466186175}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -7.13, y: -4.86, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -224,15 +224,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7616e78302045ef9786ba88281d81e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tileCount: {x: 16, y: 8, z: 0}
+  _tileCount: {x: 44, y: 26, z: 0}
   _cellSpacing: {x: 0.4, y: 0.4, z: 0}
   _gridBoundaries: {fileID: 11400000, guid: dcba8a08c6bb5f54cab6c241f0d710ec, type: 2}
   _cellSpacingValues: {fileID: 11400000, guid: 719451449b4bd0d4daa0ac53e596df9b, type: 2}
   _noiseFrequency: 4
   _wallThreshold: {fileID: 11400000, guid: b4985de3a50225942a53d0fb775b03a4, type: 2}
+  _enemyCount: {fileID: 11400000, guid: 72a9ad9adc8310542a7fc44aa867a08e, type: 2}
   _enemyThreshold: {fileID: 11400000, guid: d7f7cbf06ef46a349abec211735fa20c, type: 2}
-  _wall: {fileID: 6188416484890557594, guid: 0709281534009104a89d8ed260ae9b64, type: 3}
-  _enemy: {fileID: -1510465757522979549, guid: 2d6314acf78467c42a609f8430a352cf, type: 3}
+  _wall: {fileID: 6857966946555078226, guid: 0709281534009104a89d8ed260ae9b64, type: 3}
+  _enemy: {fileID: 2121622839025640193, guid: 2d6314acf78467c42a609f8430a352cf, type: 3}
   _floor: {fileID: -5148977031366028320, guid: 857c00b6f590a4f48945184e6ffb9046, type: 3}
 --- !u!114 &466186178
 MonoBehaviour:
