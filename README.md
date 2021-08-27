@@ -1,2 +1,2 @@
 # Jocce_Sessions
- Jocce 's challenge for FG_21
+ Jocce 's challenge for FG_21, week 2
