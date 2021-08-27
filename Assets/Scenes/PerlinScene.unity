@@ -191,6 +191,7 @@ GameObject:
   - component: {fileID: 466186176}
   - component: {fileID: 466186177}
   - component: {fileID: 466186178}
+  - component: {fileID: 466186179}
   m_Layer: 0
   m_Name: GridGenerator
   m_TagString: Untagged
@@ -224,17 +225,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7616e78302045ef9786ba88281d81e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tileCount: {x: 44, y: 26, z: 0}
-  _cellSpacing: {x: 0.4, y: 0.4, z: 0}
+  _tileCount: {x: 58, y: 32, z: 0}
+  _cellSpacing: {x: 0.3, y: 0.3, z: 0}
   _gridBoundaries: {fileID: 11400000, guid: dcba8a08c6bb5f54cab6c241f0d710ec, type: 2}
   _cellSpacingValues: {fileID: 11400000, guid: 719451449b4bd0d4daa0ac53e596df9b, type: 2}
-  _noiseFrequency: 4
+  _noiseFrequency: 6
   _wallThreshold: {fileID: 11400000, guid: b4985de3a50225942a53d0fb775b03a4, type: 2}
-  _enemyCount: {fileID: 11400000, guid: 72a9ad9adc8310542a7fc44aa867a08e, type: 2}
-  _enemyThreshold: {fileID: 11400000, guid: d7f7cbf06ef46a349abec211735fa20c, type: 2}
+  _maximumEnemyCount: {fileID: 11400000, guid: 72a9ad9adc8310542a7fc44aa867a08e, type: 2}
+  _enemySpawnChance: {fileID: 11400000, guid: d7f7cbf06ef46a349abec211735fa20c, type: 2}
   _wall: {fileID: 6857966946555078226, guid: 0709281534009104a89d8ed260ae9b64, type: 3}
-  _enemy: {fileID: 2121622839025640193, guid: 2d6314acf78467c42a609f8430a352cf, type: 3}
   _floor: {fileID: -5148977031366028320, guid: 857c00b6f590a4f48945184e6ffb9046, type: 3}
+  _enemy: {fileID: 2121622839025640193, guid: 2d6314acf78467c42a609f8430a352cf, type: 3}
+  _exit: {fileID: 5310395666741282965, guid: 5225631e85fb89d4d980a4f3677695b4, type: 3}
+  _wallRegionThreshold: 30
+  _floorRegionThreshold: 30
+  _corridorWidth: 2
 --- !u!114 &466186178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,7 +257,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 466186177}
         m_TargetAssemblyTypeName: _Code.Grid.PerlinNoiseGrid, Assembly-CSharp
-        m_MethodName: SpawnGrid
+        m_MethodName: RecreateGrid
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -262,9 +267,25 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &466186179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466186175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79e2ab183f1648b79e928c872e841912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventToListen: {fileID: 11400000, guid: 9d83c51039beac14e872de76e658cfcd, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 466186177}
         m_TargetAssemblyTypeName: _Code.Grid.PerlinNoiseGrid, Assembly-CSharp
-        m_MethodName: SpawnPlayer
+        m_MethodName: RecreateGrid
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

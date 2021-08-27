@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3749792627399805061}
   - component: {fileID: 1142142929440996427}
+  - component: {fileID: 1210667138585966924}
   m_Layer: 0
   m_Name: Visual
   m_TagString: Untagged
@@ -82,6 +83,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1210667138585966924
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430407091150810082}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &6967034320268470796
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,7 +158,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81a0d20f99918854eacf2989181f64b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 2
   _collider2D: {fileID: 6326037413163577705}
   _movePointController: {fileID: 7990914832809612900}
   _collisionEvent:
@@ -180,7 +206,10 @@ MonoBehaviour:
   _circleDragDistance: 0.1
   _layer:
     serializedVersion: 2
-    m_Bits: 65
+    m_Bits: 193
+  _movePointLayer:
+    serializedVersion: 2
+    m_Bits: 128
   MovePoint: {fileID: 0}
 --- !u!61 &6326037413163577705
 BoxCollider2D:
@@ -249,7 +278,7 @@ MonoBehaviour:
       - m_Target: {fileID: 2121622839025640193}
         m_TargetAssemblyTypeName: _Code.Grid.GridEnemy, Assembly-CSharp
         m_MethodName: MoveEnemyToRandomDirection
-        m_Mode: 1
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

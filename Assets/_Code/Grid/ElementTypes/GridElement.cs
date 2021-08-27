@@ -1,16 +1,9 @@
 ﻿using UnityEngine;
 
-namespace _Code.Grid
+namespace _Code.Grid.ElementTypes
 {
-    public enum GridElementType
-    {
-        floor,
-        wall,
-        enemy
-    }
-
     public class GridElement : MonoBehaviour
     {
-        public GridElementType Type;
+        public bool isWall;
     }
 }

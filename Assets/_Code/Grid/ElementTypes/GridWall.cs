@@ -1,7 +1,6 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace _Code.Grid
+namespace _Code.Grid.ElementTypes
 {
     [RequireComponent(typeof(Collider2D))]
     public class GridWall : GridElement

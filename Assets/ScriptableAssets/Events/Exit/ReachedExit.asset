@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0f5da41882689c44a56224a0a50f92c, type: 3}
-  m_Name: EnemyThreshold
+  m_Script: {fileID: 11500000, guid: 5f25b18f08d34e9ba157005f4b81d304, type: 3}
+  m_Name: ReachedExit
   m_EditorClassIdentifier: 
-  Value: 0.7

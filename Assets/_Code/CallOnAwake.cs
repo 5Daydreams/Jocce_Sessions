@@ -1,13 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class CallOnAwake : MonoBehaviour
+namespace _Code
 {
-    [SerializeField] private UnityEvent _event;
-    void Awake()
+    public class CallOnAwake : MonoBehaviour
     {
-        _event.Invoke();
+        [SerializeField] private UnityEvent _event;
+        void Awake()
+        {
+            _event.Invoke();
+        }
     }
 }

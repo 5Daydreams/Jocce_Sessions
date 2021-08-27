@@ -1,7 +1,6 @@
 ﻿using System;
 using _Code.Extensions;
 using _Code.Movement;
-using _Code.Scriptables;
 using UnityEngine;
 
 namespace _Code
@@ -27,9 +26,15 @@ namespace _Code
 
         private bool CheckForInput()
         {
+            _movementDirection = Vector2.zero;
+
             // Try Keyboard Input
             _movementDirection.x = (int) Input.GetAxisRaw("Horizontal");
-            _movementDirection.y = (int) Input.GetAxisRaw("Vertical");
+            if (Mathf.Abs(_movementDirection.x) < Single.Epsilon)
+            {
+                _movementDirection.y = (int) Input.GetAxisRaw("Vertical");
+                _movementDirection.x = 0;
+            }
             
             // Try Mouse Input
             if (Input.GetMouseButton(0))
@@ -62,7 +67,7 @@ namespace _Code
 
         private void MovePlayer()
         {
-            _movePointController.TryRepositionMovePoint(this.transform.position,_movementDirection);
+            _movePointController.RepositionMovePoint(this.transform.position,_movementDirection);
         }
 
         public void RepositionPlayer(Vector3 position)

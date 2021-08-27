@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace _Code._Scriptables.ScriptableSingletons
+namespace _Code._Scriptables.ScriptableSingletons.DebugSingleton
 {
     [CreateAssetMenu(menuName = "ScriptableSingletons/Debug")]
     public class DebugEvent : ScriptableObject

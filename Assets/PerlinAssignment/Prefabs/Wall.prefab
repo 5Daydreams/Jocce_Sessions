@@ -122,5 +122,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 440e11c318e24ed408f7cf8ab4051e3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 1
+  isWall: 1
   _collider2D: {fileID: 2338145783105936943}

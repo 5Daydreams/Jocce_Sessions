@@ -10,6 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e0f5da41882689c44a56224a0a50f92c, type: 3}
-  m_Name: WallThreshold
+  m_Name: EnemyThreshold
   m_EditorClassIdentifier: 
-  Value: 0.4
+  Value: 0.006
+  Description: Value should range from 0~1 as a percentage

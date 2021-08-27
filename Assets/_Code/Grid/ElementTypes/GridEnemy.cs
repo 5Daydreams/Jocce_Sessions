@@ -1,14 +1,12 @@
-﻿using System;
-using System.Security.Cryptography;
-using _Code.Movement;
+﻿using _Code.Movement;
 using UnityEngine;
 using UnityEngine.Events;
 using Random = UnityEngine.Random;
 
-namespace _Code.Grid
+namespace _Code.Grid.ElementTypes
 {
     [RequireComponent(typeof(Collider2D), typeof(MovePointController))]
-    public class GridEnemy : GridElement
+    public class GridEnemy : MonoBehaviour
     {
         [SerializeField] private Collider2D _collider2D;
         [SerializeField] private MovePointController _movePointController;
@@ -34,7 +32,7 @@ namespace _Code.Grid
             Destroy(_movePointController.MovePoint.gameObject);
         }
 
-        public void MoveEnemyToRandomDirection()
+        public void MoveEnemyToRandomDirection(bool forceReposition = false)
         {
             float rotationAngle = Random.Range(0, 4) * BASE_ROTATION_VALUE;
             
@@ -51,12 +49,17 @@ namespace _Code.Grid
 
             if (_movePointController.CheckForFreeSpace(direction, 0.5f))
             {
-                _movePointController.TryRepositionMovePoint(this.transform.position, direction);
+                _movePointController.RepositionMovePoint(this.transform.position, direction, forceReposition);
             }
         }
 
         private void OnTriggerEnter2D(Collider2D other)
         {
+            if (other.gameObject.layer == this.gameObject.layer)
+            {
+                MoveEnemyToRandomDirection(true);
+                return;
+            }
             _collisionEvent.Invoke();
         }
     }

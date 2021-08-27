@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace FG {
+namespace _Code._Scriptables.ScriptableSingletons.DestroyObject {
 	[CreateAssetMenu(menuName = "ScriptableSingletons/DestroyObject")]
 	public class DestroyTargetObject : ScriptableObject 
 	{

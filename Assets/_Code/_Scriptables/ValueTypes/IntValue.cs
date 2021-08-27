@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace _Code.Scriptables
+namespace _Code._Scriptables.ValueTypes
 {
     [CreateAssetMenu(menuName = "ScriptableValues/Int", fileName = "IntValue")]
     public class IntValue : BaseValueType<int>
