@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: AlphaCutoffBlack
-  m_Shader: {fileID: 4800000, guid: 967dddf038b5ec34aade800d87805210, type: 3}
+  m_Name: AlphaCutoffBlack_Mid_1
+  m_Shader: {fileID: 4800000, guid: 5f73ab1c7d246d745a5a6a771c19cf9e, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -41,8 +41,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+        m_Scale: {x: 20, y: 1}
+        m_Offset: {x: 0.5, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -58,7 +58,8 @@ Material:
     m_Floats:
     - _BumpScale: 1
     - _Cutoff: 0.5
-    - _CutoffValue: 0.1
+    - _CutoffValue: 0.95
+    - _CutoffValue2: 0.1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
@@ -68,14 +69,19 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _ParallaxSpeed: 20
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _UVCutoff: 0.5
+    - _UVCutoffFreq: 2.5
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _ColorTint: {r: 0.09707742, g: 0.6037736, b: 0, a: 1}
+    - _ColorTint: {r: 0.114061035, g: 0.254717, b: 0.073291205, a: 1}
+    - _ColorTint1: {r: 0.033675432, g: 1, b: 0, a: 1}
+    - _ColorTint2: {r: 0, g: 0.7313735, b: 0.990566, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _TransparentColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []

@@ -1,4 +1,4 @@
-Shader "Unlit/AlphaCut_XScrolling"
+Shader "Unlit/AlphaCut_Outline"
 {
     Properties
     {
@@ -10,7 +10,10 @@ Shader "Unlit/AlphaCut_XScrolling"
     }
     SubShader
     {
-        Tags { "RenderType"="Opaque" "Queue" = "Transparent" }
+        Tags
+        {
+            "RenderType"="Opaque" "Queue" = "Transparent"
+        }
 
         Pass
         {
@@ -40,8 +43,8 @@ Shader "Unlit/AlphaCut_XScrolling"
             float4 _TransparentColor;
             float _CutoffValue;
             float _ParallaxSpeed;
-            
-            v2f vert (appdata v)
+
+            v2f vert(appdata v)
             {
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
@@ -49,18 +52,21 @@ Shader "Unlit/AlphaCut_XScrolling"
                 return o;
             }
 
-
-            fixed4 frag (v2f i) : SV_Target
+            fixed4 frag(v2f i) : SV_Target
             {
                 i.uv.x += _ParallaxSpeed * _Time.x;
-
+                
                 fixed4 col = tex2D(_MainTex, i.uv);
 
-                float distanceToNullColor = 1-length(_TransparentColor.xyz - col.xyz);
+                float distanceToNullColor = 1 - length(_TransparentColor.xyz - col.xyz);
 
-                fixed alphaValue = step(distanceToNullColor,_CutoffValue);
-                
-                return float4(_ColorTint.xyz,alphaValue);
+                fixed alphaValue = step(distanceToNullColor, _CutoffValue);
+
+                float lerpValue = 1-fwidth(col.xy);
+
+                float3 colour = lerp(_TransparentColor,_ColorTint,lerpValue); 
+
+                return float4(colour, alphaValue);
             }
             ENDCG
         }

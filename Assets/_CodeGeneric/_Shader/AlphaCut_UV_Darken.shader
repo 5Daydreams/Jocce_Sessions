@@ -1,4 +1,4 @@
-Shader "Unlit/AlphaCut_XScrolling"
+Shader "Unlit/AlphaCut_UV_Darken"
 {
     Properties
     {
@@ -53,14 +53,20 @@ Shader "Unlit/AlphaCut_XScrolling"
             fixed4 frag (v2f i) : SV_Target
             {
                 i.uv.x += _ParallaxSpeed * _Time.x;
-
+                
                 fixed4 col = tex2D(_MainTex, i.uv);
 
                 float distanceToNullColor = 1-length(_TransparentColor.xyz - col.xyz);
 
                 fixed alphaValue = step(distanceToNullColor,_CutoffValue);
                 
-                return float4(_ColorTint.xyz,alphaValue);
+                float lerpValue = 1-fwidth(col.xy);
+
+                float3 colour = lerp(_TransparentColor,_ColorTint,lerpValue); 
+
+                float3 finalColor = lerp(_TransparentColor,colour, i.uv.y);
+                
+                return float4(finalColor.xyz,alphaValue);
             }
             ENDCG
         }
