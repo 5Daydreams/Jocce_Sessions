@@ -6,7 +6,7 @@ Shader "Unlit/AlphaCut_Outline"
         _ColorTint ("Tint", Color) = (1,1,1,1)
         _TransparentColor ("_TransparentColor", Color) = (1,1,1,1)
         _CutoffValue ("_CutoffValue", Float) = 0.1
-        _ParallaxSpeed("Parallax Speed", Float) = 1.0
+        _ParallaxOffset("Parallax Offset", Vector) = (1,0,0,0)
     }
     SubShader
     {
@@ -43,7 +43,8 @@ Shader "Unlit/AlphaCut_Outline"
             float4 _TransparentColor;
             float _CutoffValue;
             float _ParallaxSpeed;
-
+            float2 _ParallaxOffset;
+            
             v2f vert(appdata v)
             {
                 v2f o;
@@ -54,9 +55,7 @@ Shader "Unlit/AlphaCut_Outline"
 
             fixed4 frag(v2f i) : SV_Target
             {
-                i.uv.x += _ParallaxSpeed * _Time.x;
-                
-                fixed4 col = tex2D(_MainTex, i.uv);
+                fixed4 col = tex2D(_MainTex, i.uv + _ParallaxOffset);
 
                 float distanceToNullColor = 1 - length(_TransparentColor.xyz - col.xyz);
 

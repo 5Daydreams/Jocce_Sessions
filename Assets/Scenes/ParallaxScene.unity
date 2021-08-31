@@ -152,7 +152,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &426816951
 MonoBehaviour:
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _inputEvent: {fileID: 11400000, guid: 03d2aaf4bead6ef4d91c7c2d84a9e286, type: 2}
-  _lockToSingleAxis: 0
+  _useTileMovement: 0
 --- !u!1 &447192157
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,6 +425,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1939464528}
   - component: {fileID: 999808300660402533}
+  - component: {fileID: 1939464529}
   m_Layer: 0
   m_Name: Background_01
   m_TagString: Untagged
@@ -446,8 +447,36 @@ Transform:
   - {fileID: 1441186602}
   - {fileID: 447192158}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1939464529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1939464527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e31a94cf8a1b4fc9a1e05ef3ac4bf91e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventToListen: {fileID: 11400000, guid: 03d2aaf4bead6ef4d91c7c2d84a9e286, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 999808300660402533}
+        m_TargetAssemblyTypeName: FG.ParallaxTiledSprites, Assembly-CSharp
+        m_MethodName: SetParallaxMovementSpeed
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &999808300660402533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -461,7 +490,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _renderers: []
-  _scrollSpeed: 1
+  _scrollSpeed: 0.1
+  _shaderOffsetVariableName: 
 --- !u!1001 &2135629322507920625
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -475,7 +505,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2135629323019421679, guid: ed81df4dede2892459c52aade33c580c, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2135629323019421679, guid: ed81df4dede2892459c52aade33c580c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -517,69 +547,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2646155823854254350, guid: ed81df4dede2892459c52aade33c580c, type: 3}
-      propertyPath: _scrollSpeed
-      value: 25
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed81df4dede2892459c52aade33c580c, type: 3}
---- !u!1001 &6999106586692599204
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6999106587712110683, guid: 7d0ad11f81e523c44b9e5a5289ba0097, type: 3}
-      propertyPath: m_Name
-      value: BackdropGenerator
-      objectReference: {fileID: 0}
-    - target: {fileID: 6999106587712111524, guid: 7d0ad11f81e523c44b9e5a5289ba0097, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6999106587712111524, guid: 7d0ad11f81e523c44b9e5a5289ba0097, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6999106587712111524, guid: 7d0ad11f81e523c44b9e5a5289ba0097, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6999106587712111524, guid: 7d0ad11f81e523c44b9e5a5289ba0097, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6999106587712111524, guid: 7d0ad11f81e523c44b9e5a5289ba0097, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6999106587712111524, guid: 7d0ad11f81e523c44b9e5a5289ba0097, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6999106587712111524, guid: 7d0ad11f81e523c44b9e5a5289ba0097, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6999106587712111524, guid: 7d0ad11f81e523c44b9e5a5289ba0097, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6999106587712111524, guid: 7d0ad11f81e523c44b9e5a5289ba0097, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6999106587712111524, guid: 7d0ad11f81e523c44b9e5a5289ba0097, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6999106587712111524, guid: 7d0ad11f81e523c44b9e5a5289ba0097, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7d0ad11f81e523c44b9e5a5289ba0097, type: 3}
 --- !u!1001 &7426544854310006690
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -587,17 +556,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4551152225724893473, guid: f53bfe08020835c48bd131c8041e0e38, type: 3}
-      propertyPath: _scrollSpeed
-      value: 15
-      objectReference: {fileID: 0}
     - target: {fileID: 7426544854963355668, guid: f53bfe08020835c48bd131c8041e0e38, type: 3}
       propertyPath: m_Name
       value: TreesMid_02
       objectReference: {fileID: 0}
     - target: {fileID: 7426544854963355669, guid: f53bfe08020835c48bd131c8041e0e38, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7426544854963355669, guid: f53bfe08020835c48bd131c8041e0e38, type: 3}
       propertyPath: m_LocalPosition.x
@@ -654,7 +619,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _renderers: []
-  _scrollSpeed: 0.5
+  _scrollSpeed: 0.05
+  _shaderOffsetVariableName: _ParallaxOffset
 --- !u!1001 &8540065497888351409
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -662,13 +628,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2671166777110899910, guid: 756763d3b37584747bd7a3d5ef81d856, type: 3}
-      propertyPath: _scrollSpeed
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 8540065498192320370, guid: 756763d3b37584747bd7a3d5ef81d856, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8540065498192320370, guid: 756763d3b37584747bd7a3d5ef81d856, type: 3}
       propertyPath: m_LocalPosition.x
@@ -725,7 +687,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8571292470730245984, guid: d5e1ab8908f09584ba9114ea9bd2141a, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8571292470730245984, guid: d5e1ab8908f09584ba9114ea9bd2141a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -783,6 +745,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9061916570130391157}
   - component: {fileID: 8080140810032080960}
+  - component: {fileID: 9061916570130391147}
   m_Layer: 0
   m_Name: Background_02
   m_TagString: Untagged
@@ -790,6 +753,34 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &9061916570130391147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9061916570130391146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e31a94cf8a1b4fc9a1e05ef3ac4bf91e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventToListen: {fileID: 11400000, guid: 03d2aaf4bead6ef4d91c7c2d84a9e286, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8080140810032080960}
+        m_TargetAssemblyTypeName: FG.ParallaxTiledSprites, Assembly-CSharp
+        m_MethodName: SetParallaxMovementSpeed
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &9061916570130391157
 Transform:
   m_ObjectHideFlags: 0
@@ -803,7 +794,7 @@ Transform:
   m_Children:
   - {fileID: 9061916570778828135}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9061916570778828132
 GameObject:
