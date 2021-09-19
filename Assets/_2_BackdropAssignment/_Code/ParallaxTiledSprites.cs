@@ -10,7 +10,7 @@ namespace FG
         [SerializeField] private string _shaderOffsetVariableName;
         [SerializeField] private float _scrollSpeed;
         
-        private List<SpriteRenderer> _renderers;
+        private List<SpriteRenderer> _renderers = new List<SpriteRenderer>();
         private Vector2 _offsetCache = new Vector2();
 
         private void Awake()

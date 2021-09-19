@@ -489,9 +489,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ce41f5b6e84714aef6587f77cb5fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _renderers: []
+  _shaderOffsetVariableName: _ParallaxOffset
   _scrollSpeed: 0.1
-  _shaderOffsetVariableName: 
 --- !u!1001 &2135629322507920625
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -547,6 +546,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2646155823854254350, guid: ed81df4dede2892459c52aade33c580c, type: 3}
+      propertyPath: _shaderOffsetVariableName
+      value: _ParallaxOffset
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed81df4dede2892459c52aade33c580c, type: 3}
 --- !u!1001 &7426544854310006690
@@ -556,6 +559,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4551152225724893473, guid: f53bfe08020835c48bd131c8041e0e38, type: 3}
+      propertyPath: _shaderOffsetVariableName
+      value: _ParallaxOffset
+      objectReference: {fileID: 0}
     - target: {fileID: 7426544854963355668, guid: f53bfe08020835c48bd131c8041e0e38, type: 3}
       propertyPath: m_Name
       value: TreesMid_02
@@ -618,9 +625,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ce41f5b6e84714aef6587f77cb5fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _renderers: []
-  _scrollSpeed: 0.05
   _shaderOffsetVariableName: _ParallaxOffset
+  _scrollSpeed: 0.05
 --- !u!1001 &8540065497888351409
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -628,6 +634,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2671166777110899910, guid: 756763d3b37584747bd7a3d5ef81d856, type: 3}
+      propertyPath: _shaderOffsetVariableName
+      value: _ParallaxOffset
+      objectReference: {fileID: 0}
     - target: {fileID: 8540065498192320370, guid: 756763d3b37584747bd7a3d5ef81d856, type: 3}
       propertyPath: m_RootOrder
       value: 2
